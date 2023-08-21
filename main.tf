@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIAZWV74TQOKCPWBB6M"
-  secret_key = "74o5BnmlsVvMWUin7flWI9TFi6gp+e9HbM+m4K2q"
+  access_key = ""
+  secret_key = ""
 }
 
 resource "aws_instance" "example_instance" {
@@ -33,7 +33,15 @@ resource "aws_security_group" "example_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"  // All protocols
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
+
 
 output "public_ip" {
   value = aws_instance.example_instance.public_ip
