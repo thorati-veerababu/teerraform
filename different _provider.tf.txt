@@ -1,0 +1,28 @@
+provider "aws" {
+  region = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+resource "aws_iam_user" "veeru" {
+  name = "veeruuu"
+
+}
+provider "azurerm" {
+
+}
+
+terraform {
+  required_providers {
+    azuredevops = {
+      source = "microsoft/azuredevops"
+      version = ">= 0.1.0"
+    }
+  }
+}
+
+resource "azuredevops_project" "project" {
+  name        = "Project Name"
+  description = "Project Description"
+}
+
+# Define your resources below (e.g., digitalocean_droplet, digitalocean_volume, etc.)
