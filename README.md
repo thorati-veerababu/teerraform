@@ -1,3 +1,5 @@
+
+
 ### Teerraform
 Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
 
@@ -34,5 +36,11 @@ Terraform allows you to collaborate on your infrastructure with its remote state
 
 You can also connect Terraform Cloud to version control systems (VCSs) like GitHub, GitLab, and others, allowing it to automatically propose infrastructure changes when you commit configuration changes to VCS. This lets you manage changes to your infrastructure through version control, as you would with application code.
 
-
+## note 
+Important Learning
+Terraform requires explicit source information for any providers that are not
+HashiCorp-maintained, using a new syntax in the required_providers nested
+block inside the terraform configuration block
+HashiCorp Maintained
+Non-HashiCorp Maintained
 
